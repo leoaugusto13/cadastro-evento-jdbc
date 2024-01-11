@@ -19,8 +19,7 @@ public class EventoDAO {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, evento.getNome());
-            preparedStatement.setDate(2, (java.sql.Date) new Date(evento.getData().getTime()));
-
+            preparedStatement.setDate(2, new java.sql.Date(evento.getData().getTime()));
             preparedStatement.executeUpdate();
 
             try (ResultSet resultSet = preparedStatement.getGeneratedKeys()) {
@@ -38,7 +37,7 @@ public class EventoDAO {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, evento.getNome());
-            preparedStatement.setDate(2, (java.sql.Date) new Date(evento.getData().getTime()));
+            preparedStatement.setDate(2, new java.sql.Date(evento.getData().getTime()));
             preparedStatement.setInt(3, evento.getId());
 
             preparedStatement.executeUpdate();

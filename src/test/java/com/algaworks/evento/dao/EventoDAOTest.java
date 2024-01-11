@@ -19,7 +19,7 @@ public class EventoDAOTest {
     @BeforeAll
     public static void iniciarClasse() throws SQLException {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cadastroevento" +
-                "?useTimezone=true&serverTimezone=UTC", "root", "1234567");
+                "?useTimezone=true&serverTimezone=UTC", "root", "12345678");
     }
 
     @AfterAll
